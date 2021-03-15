@@ -4,14 +4,81 @@
 [![swift5.4](https://img.shields.io/badge/swift5.4-compatible-brightgreen.svg?style=flat)](https://developer.apple.com/swift)
 [![Xcode 12.5 beta 3+](https://img.shields.io/badge/Xcode-12.5beta+-blue.svg?style=flat)](https://developer.apple.com/support/beta-software/)
 
-# Motivation: Completion handlers are suboptimal
+# Problems with block-based APIs
+
+- Pyramid of Doom 
 
 ```swift  
- func greetUser() {
+    func greetUser() {
         getUserId { [self] userId in
             getUserLastname(userId: userId) { lastName in
                 getUserFirstName(userId: userId) { firstName in
                     print("Hello \(firstName) \(lastName)")
+                }
+            }
+        }
+    }
+```
+- Verbosity and old-style error handling
+
+```swift
+        getUserId { [self] userId in
+            guard let userId = userId else {
+                handleNilUserId()
+                return
+            }
+            getUserLastname(userId: userId) { lastName in
+                getUserFirstName(userId: userId) { firstName in
+                    print("Hello \(firstName) \(lastName)")
+                }
+            }
+        }
+```
+- Forget to call a completion handler
+
+```swift
+    func greetUser(completionBlock: (result: String?, error: NSError?) -> Void) {
+        getUserId { [self] userId in
+            guard let userId = userId else {
+                return // <- forgot to call the block
+            }
+            getUserLastname(userId: userId) { lastName in
+                getUserFirstName(userId: userId) { firstName in
+                    let greet = "Hello \(firstName) \(lastName)"
+                    completionBlock(greet, nil)
+                }
+            }
+        }
+    }
+```
+- Forget to return after calling a completion handler
+
+```swift
+    func greetUser(completionBlock: (result: String?, error: NSError?) -> Void) {
+        getUserId { [self] userId in
+            guard let userId = userId else {
+                completionBlock(nil, Error("user cannot be nil")) // <- forgot to return after calling the block
+            }
+            getUserLastname(userId: userId) { lastName in
+                getUserFirstName(userId: userId) { firstName in
+                    let greet = "Hello \(firstName) \(lastName)"
+                    completionBlock(greet, nil)
+                }
+            }
+        }
+    }
+```
+- Continuing on the wrong queue/thread
+
+```swift
+    func greetUser(completionBlock: (result: String?, error: NSError?) -> Void) {
+        getUserId { [self] userId in
+            getUserLastname(userId: userId) { lastName in
+                getUserFirstName(userId: userId) { firstName in
+                    let greet = "Hello \(firstName) \(lastName)"
+                    DispatchQueue.main.async {
+                        completionBlock(greet, nil)
+                    }
                 }
             }
         }
