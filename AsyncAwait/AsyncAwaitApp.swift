@@ -14,7 +14,9 @@ struct AsyncAwaitApp: App {
         runExample()
     }
     func runExample() {
+        motivation.greetUserAwait()
         motivation.greetUserAsync()
+        NetworkRequest.init().getData()
     }
     var body: some Scene {
         WindowGroup {

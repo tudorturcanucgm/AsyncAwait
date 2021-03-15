@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		475A786125FF76080047641E /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475A786025FF76080047641E /* URLSession+Extensions.swift */; };
 		47D19D6725FF516400B42D7F /* AsyncAwaitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D19D6625FF516400B42D7F /* AsyncAwaitApp.swift */; };
 		47D19D6925FF516400B42D7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D19D6825FF516400B42D7F /* ContentView.swift */; };
 		47D19D6B25FF516600B42D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47D19D6A25FF516600B42D7F /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		475A786025FF76080047641E /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
 		47D19D6325FF516400B42D7F /* AsyncAwait.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsyncAwait.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D19D6625FF516400B42D7F /* AsyncAwaitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitApp.swift; sourceTree = "<group>"; };
 		47D19D6825FF516400B42D7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				47D19D9225FF563300B42D7F /* Motivation.swift */,
+				475A786025FF76080047641E /* URLSession+Extensions.swift */,
 			);
 			path = AsyncAwait;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				475A786125FF76080047641E /* URLSession+Extensions.swift in Sources */,
 				47D19D6925FF516400B42D7F /* ContentView.swift in Sources */,
 				47D19D6725FF516400B42D7F /* AsyncAwaitApp.swift in Sources */,
 				47D19D9325FF563300B42D7F /* Motivation.swift in Sources */,

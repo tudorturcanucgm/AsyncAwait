@@ -59,10 +59,18 @@ class Motivation {
         })
     }
     
-    @asyncHandler func greetUserAsync() {
+    @asyncHandler func greetUserAwait() {
         let userId = await getUserId()
         let firstName = await getUserFirstName(userId: userId)
         let lastName = await getUserLastName(userId: userId)
         print("Hello \(firstName) \(lastName)")
+    }
+    
+    @asyncHandler func greetUserAsync() {
+        let userId = await getUserId()
+        async let firstName = getUserFirstName(userId: userId)
+        async let lastName = getUserLastName(userId: userId)
+
+        await print("Hello \(firstName) \(lastName)")
     }
 }
