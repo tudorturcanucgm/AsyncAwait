@@ -13,11 +13,13 @@ struct AsyncAwaitApp: App {
     init() {
         runExample()
     }
+
     func runExample() {
         motivation.greetUserAwait()
         motivation.greetUserAsync()
-        NetworkRequest.init().getData()
+        NetworkRequest().getData()
     }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
