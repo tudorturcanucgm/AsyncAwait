@@ -18,7 +18,7 @@
     }
 ```
 
-# General use
+# General use for async await
 
 We can define an asynchronous function with the following syntax:
 
