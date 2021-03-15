@@ -13,6 +13,7 @@
 		47D19D6E25FF516600B42D7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47D19D6D25FF516600B42D7F /* Preview Assets.xcassets */; };
 		47D19D7925FF516600B42D7F /* AsyncAwaitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D19D7825FF516600B42D7F /* AsyncAwaitTests.swift */; };
 		47D19D8425FF516600B42D7F /* AsyncAwaitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D19D8325FF516600B42D7F /* AsyncAwaitUITests.swift */; };
+		47D19D9325FF563300B42D7F /* Motivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D19D9225FF563300B42D7F /* Motivation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		47D19D7F25FF516600B42D7F /* AsyncAwaitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncAwaitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D19D8325FF516600B42D7F /* AsyncAwaitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitUITests.swift; sourceTree = "<group>"; };
 		47D19D8525FF516600B42D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47D19D9225FF563300B42D7F /* Motivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motivation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		47D19D6525FF516400B42D7F /* AsyncAwait */ = {
 			isa = PBXGroup;
 			children = (
+				47D19D9125FF55FB00B42D7F /* AsyncAwait */,
 				47D19D6625FF516400B42D7F /* AsyncAwaitApp.swift */,
 				47D19D6825FF516400B42D7F /* ContentView.swift */,
 				47D19D6A25FF516600B42D7F /* Assets.xcassets */,
@@ -128,6 +131,14 @@
 				47D19D8525FF516600B42D7F /* Info.plist */,
 			);
 			path = AsyncAwaitUITests;
+			sourceTree = "<group>";
+		};
+		47D19D9125FF55FB00B42D7F /* AsyncAwait */ = {
+			isa = PBXGroup;
+			children = (
+				47D19D9225FF563300B42D7F /* Motivation.swift */,
+			);
+			path = AsyncAwait;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 			files = (
 				47D19D6925FF516400B42D7F /* ContentView.swift in Sources */,
 				47D19D6725FF516400B42D7F /* AsyncAwaitApp.swift in Sources */,
+				47D19D9325FF563300B42D7F /* Motivation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

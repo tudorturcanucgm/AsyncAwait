@@ -9,6 +9,13 @@ import SwiftUI
 
 @main
 struct AsyncAwaitApp: App {
+    let motivation = Motivation()
+    init() {
+        runExample()
+    }
+    func runExample() {
+        motivation.greetUserAsync()
+    }
     var body: some Scene {
         WindowGroup {
             ContentView()
