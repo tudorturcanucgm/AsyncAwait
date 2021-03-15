@@ -22,6 +22,7 @@
 - Verbosity and old-style error handling
 
 ```swift
+    func greetUser(completionBlock: (result: String?, error: NSError?) -> Void) {
         getUserId { [self] userId in
             guard let userId = userId else {
                 handleNilUserId()
@@ -33,6 +34,7 @@
                 }
             }
         }
+    }
 ```
 - Forget to call a completion handler
 
