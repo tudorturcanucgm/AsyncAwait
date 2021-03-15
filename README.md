@@ -87,6 +87,15 @@
     }
 ```
 
+# Async semantics
+
+```swift
+   (Int) -> Int               // #1: Normal function
+   (Int) throws -> Int        // #2: Throwing function
+   (Int) async -> Int         // #3: Asynchronous function
+   (Int) async throws -> Int  // #4: Asynchronous function, can also throw.
+```
+
 # General use for async await
 
 We can define an asynchronous function with the following syntax:
